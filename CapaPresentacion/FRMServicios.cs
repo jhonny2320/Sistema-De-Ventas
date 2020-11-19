@@ -78,6 +78,7 @@ namespace CapaPresentacion
         private void OcultarColumnas()
         {
             this.dgServicios.Columns[0].Visible = false;
+            this.dgServicios.Columns[1].Visible = false;
         }
         private void mostrar()
         {

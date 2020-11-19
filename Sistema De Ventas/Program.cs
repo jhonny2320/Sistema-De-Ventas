@@ -1,6 +1,10 @@
-﻿using CapaPresentacion;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaPresentacion;
 
 namespace Sistema_De_Ventas
 {
@@ -14,7 +18,7 @@ namespace Sistema_De_Ventas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin_Empleado());
+            Application.Run(new EMPLEADOS());
         }
     }
 }

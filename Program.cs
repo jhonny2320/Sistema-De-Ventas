@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CapaPresentacion;
+using System;
 using System.Windows.Forms;
-
-using CapaPresentacion;
 
 namespace Sistema_De_Ventas
 {

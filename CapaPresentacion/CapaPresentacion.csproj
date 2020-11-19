@@ -89,6 +89,10 @@
     <Compile Include="FRMPrincipal.Designer.cs">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMServicios.cs" />
+    <Compile Include="FRMServicios.Designer.cs">
+      <DependentUpon>FRMServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVistaArticulo_Ingreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMPrincipal.resx">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMServicios.resx">
+      <DependentUpon>FRMServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVistaArticulo_Ingreso.resx">
       <DependentUpon>FrmVistaArticulo_Ingreso.cs</DependentUpon>

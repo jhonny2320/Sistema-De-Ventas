@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     class Conexion
     {
-        public static string Conectar = "Data Source=JHONNY-PC; Initial Catalog=SISTEMA DE VENTAS; Integrated Security=true";
+        public static string Conectar = "Data Source=JHONNY-PC\\JHONATAN;Initial Catalog=SISTEMA DE VENTAS;User ID=jhonny;Password=***********";
     }
    
 }

@@ -46,6 +46,7 @@
     <Compile Include="NCliente.cs" />
     <Compile Include="NEmpleados.cs" />
     <Compile Include="NIngreso.cs" />
+    <Compile Include="NServicios.cs" />
     <Compile Include="NTipoDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
