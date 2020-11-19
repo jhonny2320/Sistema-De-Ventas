@@ -26,7 +26,7 @@ namespace CapaPresentacion
             this.MensajeAyuda.SetToolTip(this.txtCosto, "ingrese el Costo del Servicio");
 
             this.txtSer_id.Visible = false;
-            
+
         }
 
 
@@ -77,7 +77,7 @@ namespace CapaPresentacion
 
         private void OcultarColumnas()
         {
-            this.dgServicios.Columns[0].Visible = false;
+            this.dgServicios.Columns[1].Visible = false;
         }
         private void mostrar()
         {
@@ -128,7 +128,7 @@ namespace CapaPresentacion
             {
                 string rpta = "";
 
-                if (this.txtNombre.Text == string.Empty || this.txtCosto.Text==string.Empty)
+                if (this.txtNombre.Text == string.Empty || this.txtCosto.Text == string.Empty)
                 {
                     mensajeError("falta ingresar algunos datos");
                     errorIcono.SetError(txtNombre, "ingrese un datos");
@@ -275,7 +275,7 @@ namespace CapaPresentacion
             }
         }
 
-       
+
     }
 }
 

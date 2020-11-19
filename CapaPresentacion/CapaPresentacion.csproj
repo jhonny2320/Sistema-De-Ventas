@@ -89,7 +89,9 @@
     <Compile Include="FRMPrincipal.Designer.cs">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMServicios.cs" />
+    <Compile Include="FRMServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRMServicios.Designer.cs">
       <DependentUpon>FRMServicios.cs</DependentUpon>
     </Compile>
@@ -109,6 +111,11 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SISTEMA_DE_VENTASDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SISTEMA_DE_VENTASDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -152,11 +159,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\almacen.jpg" />
+    <None Include="SISTEMA_DE_VENTASDataSet.xsc">
+      <DependentUpon>SISTEMA_DE_VENTASDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SISTEMA_DE_VENTASDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SISTEMA_DE_VENTASDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SISTEMA_DE_VENTASDataSet.xss">
+      <DependentUpon>SISTEMA_DE_VENTASDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\articulos.png" />

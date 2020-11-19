@@ -22,5 +22,16 @@ namespace CapaPresentacion.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JHONNY-PC\\JHONATAN;Initial Catalog=\"SISTEMA DE VENTAS\";Persist Securi" +
+            "ty Info=True;User ID=jhonny;Password=admin962011")]
+        public string SISTEMA_DE_VENTASConnectionString {
+            get {
+                return ((string)(this["SISTEMA_DE_VENTASConnectionString"]));
+            }
+        }
     }
 }
