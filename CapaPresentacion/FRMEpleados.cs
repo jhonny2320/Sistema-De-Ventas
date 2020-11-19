@@ -92,8 +92,7 @@ namespace CapaPresentacion
         private void OcultarColumnas()
         {
             this.dgEmpleados.Columns[0].Visible = false;
-            this.dgEmpleados.Columns[1].Visible = false;
-            this.dgEmpleados.Columns[4].Visible = false;
+            this.dgEmpleados.Columns[3].Visible = false;
         }
 
         private void mostrar()

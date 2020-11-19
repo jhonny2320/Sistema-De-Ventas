@@ -18,7 +18,7 @@ namespace Sistema_De_Ventas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EMPLEADOS());
+            Application.Run(new frmLogin_Empleado());
         }
     }
 }
