@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Xml;
 using CapaDatos;
-namespace PUNTO_DE_VENTA_CODIGO369_CSHARP.PANEL_DE_ADMINISTRACION_DEL_SOFTWARE
+namespace CapaPresentacion
 {
 
     public partial class CONEXION_MANUAL : Form

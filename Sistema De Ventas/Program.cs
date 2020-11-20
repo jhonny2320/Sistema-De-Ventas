@@ -13,7 +13,7 @@ namespace Sistema_De_Ventas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ());
+            Application.Run(new CapaPresentacion.frmLogin_Empleado());
         }
     }
 }

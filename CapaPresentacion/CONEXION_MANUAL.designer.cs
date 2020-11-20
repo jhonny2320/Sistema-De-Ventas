@@ -1,4 +1,4 @@
-﻿namespace PUNTO_DE_VENTA_CODIGO369_CSHARP.PANEL_DE_ADMINISTRACION_DEL_SOFTWARE
+﻿namespace CapaPresentacion
 {
     partial class CONEXION_MANUAL
     {

@@ -12,7 +12,7 @@ namespace CapaDatos
         static string dbcnString;
         //cuarto nivel de seguridad
 
-        static public string appPwdUnique = "Ada158.codigo158.BASEADA.Suerte_pa_la_proximaÑ";
+        static public string appPwdUnique = "Ada369.codigo369.BASEADA.Suerte_pa_la_proximaÑ";
 
         //leer archivo de encriptacion
         public static object checkServer()
