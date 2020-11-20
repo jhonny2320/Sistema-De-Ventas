@@ -88,7 +88,7 @@ namespace CapaPresentacion
         {
             this.dgEmpleados.Columns[0].Visible = false;
             this.dgEmpleados.Columns[1].Visible = false;
-            this.dgEmpleados.Columns[4].Visible = false;
+            //this.dgEmpleados.Columns[4].Visible = false;
         }
 
         private void mostrar()
@@ -334,6 +334,11 @@ namespace CapaPresentacion
         }
 
         private void tpListado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbidTD_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -47,17 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.dgEmpleados = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.empidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMBRESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aPELLIDOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empidTipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dIRECCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tELEFONODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aCCESODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uSUARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empleadosMostrarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sISTEMA_DE_VENTASDataSet1 = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -65,6 +54,7 @@
             this.lblTotalEmpleados = new System.Windows.Forms.Label();
             this.tbMantenimiento = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.Correo = new System.Windows.Forms.Label();
             this.txtContraseñaC = new System.Windows.Forms.TextBox();
@@ -89,7 +79,16 @@
             this.empleados_MostrarTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1TableAdapters.Empleados_MostrarTableAdapter();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1TableAdapters.EmpleadosTableAdapter();
-            this.label14 = new System.Windows.Forms.Label();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.empidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMBRESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aPELLIDOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dIRECCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tELEFONODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCCESODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uSUARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISTEMA_DE_VENTASDataSet1)).BeginInit();
@@ -293,18 +292,17 @@
             this.dgEmpleados.AutoGenerateColumns = false;
             this.dgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar,
             this.empidDataGridViewTextBoxColumn,
             this.nOMBRESDataGridViewTextBoxColumn,
             this.aPELLIDOSDataGridViewTextBoxColumn,
-            this.empidTipoDocumentoDataGridViewTextBoxColumn,
             this.tIPODEDOCUMENTODataGridViewTextBoxColumn,
             this.dOCUMENTODataGridViewTextBoxColumn,
             this.dIRECCIONDataGridViewTextBoxColumn,
             this.tELEFONODataGridViewTextBoxColumn,
             this.aCCESODataGridViewTextBoxColumn,
-            this.uSUARIODataGridViewTextBoxColumn,
-            this.Eliminar});
-            this.dgEmpleados.DataSource = this.empleadosMostrarBindingSource1;
+            this.uSUARIODataGridViewTextBoxColumn});
+            this.dgEmpleados.DataSource = this.empleadosMostrarBindingSource;
             this.dgEmpleados.Location = new System.Drawing.Point(47, 162);
             this.dgEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.dgEmpleados.MultiSelect = false;
@@ -316,104 +314,6 @@
             this.dgEmpleados.TabIndex = 0;
             this.dgEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEmpleados_CellContentClick);
             this.dgEmpleados.DoubleClick += new System.EventHandler(this.dgEmpleados_DoubleClick);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 125;
-            // 
-            // empidDataGridViewTextBoxColumn
-            // 
-            this.empidDataGridViewTextBoxColumn.DataPropertyName = "Emp_id";
-            this.empidDataGridViewTextBoxColumn.HeaderText = "Emp_id";
-            this.empidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.empidDataGridViewTextBoxColumn.Name = "empidDataGridViewTextBoxColumn";
-            this.empidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.empidDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nOMBRESDataGridViewTextBoxColumn
-            // 
-            this.nOMBRESDataGridViewTextBoxColumn.DataPropertyName = "NOMBRES";
-            this.nOMBRESDataGridViewTextBoxColumn.HeaderText = "NOMBRES";
-            this.nOMBRESDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nOMBRESDataGridViewTextBoxColumn.Name = "nOMBRESDataGridViewTextBoxColumn";
-            this.nOMBRESDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nOMBRESDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // aPELLIDOSDataGridViewTextBoxColumn
-            // 
-            this.aPELLIDOSDataGridViewTextBoxColumn.DataPropertyName = "APELLIDOS";
-            this.aPELLIDOSDataGridViewTextBoxColumn.HeaderText = "APELLIDOS";
-            this.aPELLIDOSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aPELLIDOSDataGridViewTextBoxColumn.Name = "aPELLIDOSDataGridViewTextBoxColumn";
-            this.aPELLIDOSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aPELLIDOSDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // empidTipoDocumentoDataGridViewTextBoxColumn
-            // 
-            this.empidTipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "Emp_idTipoDocumento";
-            this.empidTipoDocumentoDataGridViewTextBoxColumn.HeaderText = "Emp_idTipoDocumento";
-            this.empidTipoDocumentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.empidTipoDocumentoDataGridViewTextBoxColumn.Name = "empidTipoDocumentoDataGridViewTextBoxColumn";
-            this.empidTipoDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.empidTipoDocumentoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tIPODEDOCUMENTODataGridViewTextBoxColumn
-            // 
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "TIPO_DE_DOCUMENTO";
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.HeaderText = "TIPO_DE_DOCUMENTO";
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Name = "tIPODEDOCUMENTODataGridViewTextBoxColumn";
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dOCUMENTODataGridViewTextBoxColumn
-            // 
-            this.dOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "DOCUMENTO";
-            this.dOCUMENTODataGridViewTextBoxColumn.HeaderText = "DOCUMENTO";
-            this.dOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dOCUMENTODataGridViewTextBoxColumn.Name = "dOCUMENTODataGridViewTextBoxColumn";
-            this.dOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
-            this.dOCUMENTODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dIRECCIONDataGridViewTextBoxColumn
-            // 
-            this.dIRECCIONDataGridViewTextBoxColumn.DataPropertyName = "DIRECCION";
-            this.dIRECCIONDataGridViewTextBoxColumn.HeaderText = "DIRECCION";
-            this.dIRECCIONDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dIRECCIONDataGridViewTextBoxColumn.Name = "dIRECCIONDataGridViewTextBoxColumn";
-            this.dIRECCIONDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dIRECCIONDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tELEFONODataGridViewTextBoxColumn
-            // 
-            this.tELEFONODataGridViewTextBoxColumn.DataPropertyName = "TELEFONO";
-            this.tELEFONODataGridViewTextBoxColumn.HeaderText = "TELEFONO";
-            this.tELEFONODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tELEFONODataGridViewTextBoxColumn.Name = "tELEFONODataGridViewTextBoxColumn";
-            this.tELEFONODataGridViewTextBoxColumn.ReadOnly = true;
-            this.tELEFONODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // aCCESODataGridViewTextBoxColumn
-            // 
-            this.aCCESODataGridViewTextBoxColumn.DataPropertyName = "ACCESO";
-            this.aCCESODataGridViewTextBoxColumn.HeaderText = "ACCESO";
-            this.aCCESODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aCCESODataGridViewTextBoxColumn.Name = "aCCESODataGridViewTextBoxColumn";
-            this.aCCESODataGridViewTextBoxColumn.ReadOnly = true;
-            this.aCCESODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // uSUARIODataGridViewTextBoxColumn
-            // 
-            this.uSUARIODataGridViewTextBoxColumn.DataPropertyName = "USUARIO";
-            this.uSUARIODataGridViewTextBoxColumn.HeaderText = "USUARIO";
-            this.uSUARIODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.uSUARIODataGridViewTextBoxColumn.Name = "uSUARIODataGridViewTextBoxColumn";
-            this.uSUARIODataGridViewTextBoxColumn.ReadOnly = true;
-            this.uSUARIODataGridViewTextBoxColumn.Width = 125;
             // 
             // empleadosMostrarBindingSource1
             // 
@@ -517,6 +417,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EMPLEADOS";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label14.Location = new System.Drawing.Point(664, 289);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(277, 17);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "SIRVE PARA RECUPERAR CONTRASEÑA";
             // 
             // txtCorreo
             // 
@@ -636,6 +546,7 @@
             this.cbidTD.Name = "cbidTD";
             this.cbidTD.Size = new System.Drawing.Size(267, 24);
             this.cbidTD.TabIndex = 41;
+            this.cbidTD.SelectedIndexChanged += new System.EventHandler(this.cbidTD_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -737,15 +648,94 @@
             // 
             this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // label14
+            // Eliminar
             // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label14.Location = new System.Drawing.Point(664, 289);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(277, 17);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "SIRVE PARA RECUPERAR CONTRASEÑA";
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 125;
+            // 
+            // empidDataGridViewTextBoxColumn
+            // 
+            this.empidDataGridViewTextBoxColumn.DataPropertyName = "Emp_id";
+            this.empidDataGridViewTextBoxColumn.HeaderText = "Emp_id";
+            this.empidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.empidDataGridViewTextBoxColumn.Name = "empidDataGridViewTextBoxColumn";
+            this.empidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empidDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nOMBRESDataGridViewTextBoxColumn
+            // 
+            this.nOMBRESDataGridViewTextBoxColumn.DataPropertyName = "NOMBRES";
+            this.nOMBRESDataGridViewTextBoxColumn.HeaderText = "NOMBRES";
+            this.nOMBRESDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nOMBRESDataGridViewTextBoxColumn.Name = "nOMBRESDataGridViewTextBoxColumn";
+            this.nOMBRESDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nOMBRESDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aPELLIDOSDataGridViewTextBoxColumn
+            // 
+            this.aPELLIDOSDataGridViewTextBoxColumn.DataPropertyName = "APELLIDOS";
+            this.aPELLIDOSDataGridViewTextBoxColumn.HeaderText = "APELLIDOS";
+            this.aPELLIDOSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aPELLIDOSDataGridViewTextBoxColumn.Name = "aPELLIDOSDataGridViewTextBoxColumn";
+            this.aPELLIDOSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aPELLIDOSDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tIPODEDOCUMENTODataGridViewTextBoxColumn
+            // 
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "TIPO_DE_DOCUMENTO";
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.HeaderText = "TIPO_DE_DOCUMENTO";
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Name = "tIPODEDOCUMENTODataGridViewTextBoxColumn";
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dOCUMENTODataGridViewTextBoxColumn
+            // 
+            this.dOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "DOCUMENTO";
+            this.dOCUMENTODataGridViewTextBoxColumn.HeaderText = "DOCUMENTO";
+            this.dOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dOCUMENTODataGridViewTextBoxColumn.Name = "dOCUMENTODataGridViewTextBoxColumn";
+            this.dOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.dOCUMENTODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dIRECCIONDataGridViewTextBoxColumn
+            // 
+            this.dIRECCIONDataGridViewTextBoxColumn.DataPropertyName = "DIRECCION";
+            this.dIRECCIONDataGridViewTextBoxColumn.HeaderText = "DIRECCION";
+            this.dIRECCIONDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dIRECCIONDataGridViewTextBoxColumn.Name = "dIRECCIONDataGridViewTextBoxColumn";
+            this.dIRECCIONDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dIRECCIONDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tELEFONODataGridViewTextBoxColumn
+            // 
+            this.tELEFONODataGridViewTextBoxColumn.DataPropertyName = "TELEFONO";
+            this.tELEFONODataGridViewTextBoxColumn.HeaderText = "TELEFONO";
+            this.tELEFONODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tELEFONODataGridViewTextBoxColumn.Name = "tELEFONODataGridViewTextBoxColumn";
+            this.tELEFONODataGridViewTextBoxColumn.ReadOnly = true;
+            this.tELEFONODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aCCESODataGridViewTextBoxColumn
+            // 
+            this.aCCESODataGridViewTextBoxColumn.DataPropertyName = "ACCESO";
+            this.aCCESODataGridViewTextBoxColumn.HeaderText = "ACCESO";
+            this.aCCESODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aCCESODataGridViewTextBoxColumn.Name = "aCCESODataGridViewTextBoxColumn";
+            this.aCCESODataGridViewTextBoxColumn.ReadOnly = true;
+            this.aCCESODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // uSUARIODataGridViewTextBoxColumn
+            // 
+            this.uSUARIODataGridViewTextBoxColumn.DataPropertyName = "USUARIO";
+            this.uSUARIODataGridViewTextBoxColumn.HeaderText = "USUARIO";
+            this.uSUARIODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.uSUARIODataGridViewTextBoxColumn.Name = "uSUARIODataGridViewTextBoxColumn";
+            this.uSUARIODataGridViewTextBoxColumn.ReadOnly = true;
+            this.uSUARIODataGridViewTextBoxColumn.Width = 125;
             // 
             // EMPLEADOS
             // 
@@ -796,7 +786,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBuscarEmpleado;
         private System.Windows.Forms.DataGridView dgEmpleados;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpListado;
         private System.Windows.Forms.Label lblTotalEmpleados;
@@ -825,19 +814,19 @@
         private SISTEMA_DE_VENTASDataSet1TableAdapters.Empleados_MostrarTableAdapter empleados_MostrarTableAdapter;
         private System.Windows.Forms.BindingSource empleadosBindingSource;
         private SISTEMA_DE_VENTASDataSet1TableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
+        private System.Windows.Forms.BindingSource empleadosMostrarBindingSource1;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Label Correo;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn empidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMBRESDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aPELLIDOSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empidTipoDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPODEDOCUMENTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dOCUMENTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dIRECCIONDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tELEFONODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aCCESODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uSUARIODataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource empleadosMostrarBindingSource1;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label Correo;
-        private System.Windows.Forms.Label label14;
     }
 }

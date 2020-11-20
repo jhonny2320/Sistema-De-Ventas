@@ -45,15 +45,20 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Registro = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelRestaurarCuenta = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.RecupCon = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbCorreos = new System.Windows.Forms.ComboBox();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.PanelRestaurarCuenta.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -215,6 +220,7 @@
             // 
             this.Registro.AutoSize = true;
             this.Registro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registro.LinkColor = System.Drawing.Color.White;
             this.Registro.Location = new System.Drawing.Point(641, 16);
             this.Registro.Name = "Registro";
             this.Registro.Size = new System.Drawing.Size(127, 20);
@@ -223,20 +229,27 @@
             this.Registro.Text = "REGISTRARSE";
             this.Registro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Registro_LinkClicked);
             // 
-            // panel1
+            // PanelRestaurarCuenta
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(598, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 589);
-            this.panel1.TabIndex = 15;
+            this.PanelRestaurarCuenta.Controls.Add(this.btnCerrar);
+            this.PanelRestaurarCuenta.Controls.Add(this.label6);
+            this.PanelRestaurarCuenta.Controls.Add(this.btnEnviar);
+            this.PanelRestaurarCuenta.Controls.Add(this.cbCorreos);
+            this.PanelRestaurarCuenta.Controls.Add(this.label5);
+            this.PanelRestaurarCuenta.Controls.Add(this.label4);
+            this.PanelRestaurarCuenta.Location = new System.Drawing.Point(212, 71);
+            this.PanelRestaurarCuenta.Name = "PanelRestaurarCuenta";
+            this.PanelRestaurarCuenta.Size = new System.Drawing.Size(493, 366);
+            this.PanelRestaurarCuenta.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 28);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(78, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 17);
+            this.label4.Size = new System.Drawing.Size(352, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "RECUPERAR CONTRASEÑA";
             // 
@@ -255,12 +268,69 @@
             this.RecupCon.AutoSize = true;
             this.RecupCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecupCon.LinkArea = new System.Windows.Forms.LinkArea(0, 25);
+            this.RecupCon.LinkColor = System.Drawing.Color.White;
             this.RecupCon.Location = new System.Drawing.Point(336, 11);
             this.RecupCon.Name = "RecupCon";
             this.RecupCon.Size = new System.Drawing.Size(235, 25);
             this.RecupCon.TabIndex = 15;
             this.RecupCon.TabStop = true;
             this.RecupCon.Text = "¿olvidaste tu contraseña?";
+            this.RecupCon.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RecupCon_LinkClicked);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(3, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(173, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Correo Electronico";
+            // 
+            // cbCorreos
+            // 
+            this.cbCorreos.FormattingEnabled = true;
+            this.cbCorreos.Location = new System.Drawing.Point(182, 126);
+            this.cbCorreos.Name = "cbCorreos";
+            this.cbCorreos.Size = new System.Drawing.Size(288, 24);
+            this.cbCorreos.TabIndex = 2;
+            this.cbCorreos.SelectedIndexChanged += new System.EventHandler(this.cbCorreos_SelectedIndexChanged);
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.BackColor = System.Drawing.Color.Cyan;
+            this.btnEnviar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnEnviar.FlatAppearance.BorderSize = 5;
+            this.btnEnviar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnEnviar.ForeColor = System.Drawing.Color.Black;
+            this.btnEnviar.Location = new System.Drawing.Point(184, 213);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(224, 35);
+            this.btnEnviar.TabIndex = 3;
+            this.btnEnviar.Text = "ENVIAR";
+            this.btnEnviar.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(182, 153);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(169, 12);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "EL QUE REGISTRASTE A TU CUENTA";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(59, 283);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 5;
+            this.btnCerrar.Text = "cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmLogin_Empleado
             // 
@@ -268,7 +338,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(796, 414);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelRestaurarCuenta);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox3);
@@ -287,8 +357,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PanelRestaurarCuenta.ResumeLayout(false);
+            this.PanelRestaurarCuenta.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -312,9 +382,14 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel Registro;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelRestaurarCuenta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.LinkLabel RecupCon;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.ComboBox cbCorreos;
+        private System.Windows.Forms.Label label5;
     }
 }
