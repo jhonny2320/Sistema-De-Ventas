@@ -42,6 +42,7 @@ namespace CapaPresentacion
             this.txtUsuario.Text = string.Empty;
             this.txtContraseña.Text = string.Empty;
             this.txtContraseñaC.Text = string.Empty;
+            this.txtCorreo.Text = string.Empty;
 
         }
 
@@ -58,6 +59,8 @@ namespace CapaPresentacion
             this.txtUsuario.ReadOnly = !valor;
             this.txtContraseña.ReadOnly = !valor;
             this.txtContraseñaC.ReadOnly = !valor;
+            this.txtCorreo.ReadOnly = !valor;
+
         }
 
         //habilitar botones
@@ -157,6 +160,8 @@ namespace CapaPresentacion
                     errorIcono.SetError(txtDocumento, "ingrese un datos");
                     errorIcono.SetError(txtUsuario, "ingrese un datos");
                     errorIcono.SetError(txtContraseña, "ingrese un datos");
+                    errorIcono.SetError(txtCorreo, "ingrese un datos");
+
                 }
                 else
                 {
@@ -167,14 +172,14 @@ namespace CapaPresentacion
                         {
                             rpta = NEmpleados.Insertar(this.txtNombre.Text.ToUpper(), this.txtApellidos.Text.ToUpper(), Convert.ToInt32(this.cbidTD.SelectedValue),
                                 Convert.ToString(this.txtDocumento.Text.ToUpper()), this.txtDireccion.Text.ToUpper(), this.txtTelefono.Text.ToUpper(),
-                                this.cbAcceso.Text, this.txtUsuario.Text, this.txtContraseña.Text);
+                                this.cbAcceso.Text, this.txtUsuario.Text, this.txtContraseña.Text, this.txtCorreo.Text);
 
                         }
                         else
                         {
                             rpta = NEmpleados.Editar(Convert.ToInt32(txtEmp_id.Text), this.txtNombre.Text.ToUpper(), this.txtApellidos.Text.ToUpper(), Convert.ToInt32(this.cbidTD.SelectedValue),
                                 Convert.ToString(this.txtDocumento.Text.ToUpper()), this.txtDireccion.Text.ToUpper(), this.txtTelefono.Text.ToUpper(),
-                                this.cbAcceso.Text, this.txtUsuario.Text, this.txtContraseña.Text);
+                                this.cbAcceso.Text, this.txtUsuario.Text, this.txtContraseña.Text, this.txtCorreo.Text);
                         }
                         if (rpta.Equals("OK"))
                         {
@@ -222,8 +227,10 @@ namespace CapaPresentacion
             this.txtDocumento.Text = Convert.ToString(this.dgEmpleados.CurrentRow.Cells["DOCUMENTO"].Value);
             this.txtDireccion.Text = Convert.ToString(this.dgEmpleados.CurrentRow.Cells["DIRECCION"].Value);
             this.txtTelefono.Text = Convert.ToString(this.dgEmpleados.CurrentRow.Cells["TELEFONO"].Value);
+            this.txtCorreo.Text = Convert.ToString(this.dgEmpleados.CurrentRow.Cells["CORREO"].Value);
             this.txtUsuario.Text = Convert.ToString(this.dgEmpleados.CurrentRow.Cells["ACCESO"].Value);
             this.txtUsuario.Text = Convert.ToString(this.dgEmpleados.CurrentRow.Cells["USUARIO"].Value);
+
 
             this.tabControl1.SelectedIndex = 1;
         }

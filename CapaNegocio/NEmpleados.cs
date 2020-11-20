@@ -10,7 +10,7 @@ namespace CapaNegocio
         //metodo para comunicacion con la capa datos
 
         public static string Insertar(string Emp_nombre, string Emp_apellido, int Emp_idTipoDocumento
-            , string Emp_documento, string Emp_direccion, string Emp_telefono, string Emp_acceso, string Emp_usuario, string Emp_contraseña)
+            , string Emp_documento, string Emp_direccion, string Emp_telefono, string Emp_acceso, string Emp_usuario, string Emp_contraseña, string Emp_Correo)
         {
             DEmpleados obj = new DEmpleados();
             obj.Emp_Nombre = Emp_nombre;
@@ -22,13 +22,14 @@ namespace CapaNegocio
             obj.Emp_Acceso = Emp_acceso;
             obj.Emp_Usuario = Emp_usuario;
             obj.Emp_Contraseña = Emp_contraseña;
+            obj.Emp_Correo = Emp_Correo;
 
             return obj.Insertar(obj);
 
         }
 
         public static string Editar(int Emp_id, string Emp_nombre, string Emp_apellido, int Emp_idTipoDocumento
-            , string Emp_documento, string Emp_direccion, string Emp_telefono, string Emp_acceso, string Emp_usuario, string Emp_contraseña)
+            , string Emp_documento, string Emp_direccion, string Emp_telefono, string Emp_acceso, string Emp_usuario, string Emp_contraseña, string Emp_Correo)
         {
             DEmpleados obj = new DEmpleados();
             obj.Emp_Id = Emp_id;
@@ -41,6 +42,8 @@ namespace CapaNegocio
             obj.Emp_Acceso = Emp_acceso;
             obj.Emp_Usuario = Emp_usuario;
             obj.Emp_Contraseña = Emp_contraseña;
+            obj.Emp_Correo = Emp_Correo;
+
 
             return obj.Editar(obj);
 
