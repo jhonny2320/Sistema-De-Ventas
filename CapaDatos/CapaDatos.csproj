@@ -48,9 +48,11 @@
     <Compile Include="DCliente.cs" />
     <Compile Include="DDetalle_Ingreso.cs" />
     <Compile Include="DEmpleados.cs" />
+    <Compile Include="Desencryptacion.cs" />
     <Compile Include="DIngreso.cs" />
     <Compile Include="DServicios.cs" />
     <Compile Include="DTipoDocumento.cs" />
+    <Compile Include="Encryptacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
