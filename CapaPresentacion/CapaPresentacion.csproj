@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CONEXION_MANUAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONEXION_MANUAL.designer.cs">
+      <DependentUpon>CONEXION_MANUAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CONEXION_MANUAL.resx">
+      <DependentUpon>CONEXION_MANUAL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMArticulos.resx">
       <DependentUpon>FRMArticulos.cs</DependentUpon>
     </EmbeddedResource>

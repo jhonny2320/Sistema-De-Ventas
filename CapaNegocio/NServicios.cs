@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Data;
+﻿
 using CapaDatos;
+using System.Data;
 
 
 namespace CapaNegocio
@@ -13,7 +8,7 @@ namespace CapaNegocio
     public class NServicios
     {
 
-        public static string Insertar(string Ser_servicio,decimal Ser_costo)
+        public static string Insertar(string Ser_servicio, decimal Ser_costo)
         {
             DServicios obj = new DServicios();
             obj.Ser_Servicio = Ser_servicio;
@@ -21,7 +16,7 @@ namespace CapaNegocio
 
             return obj.Insertar(obj);
         }
-        public static string Editar(int Ser_id,string Ser_servicio, decimal Ser_costo)
+        public static string Editar(int Ser_id, string Ser_servicio, decimal Ser_costo)
         {
             DServicios obj = new DServicios();
             obj.Ser_Id = Ser_id;
@@ -34,7 +29,7 @@ namespace CapaNegocio
         {
             DServicios obj = new DServicios();
             obj.Ser_Id = Ser_id;
-            
+
             return obj.Eliminar(obj);
         }
 
