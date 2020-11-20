@@ -3,13 +3,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Xml;
+using CapaDatos;
 namespace PUNTO_DE_VENTA_CODIGO369_CSHARP.PANEL_DE_ADMINISTRACION_DEL_SOFTWARE
 {
 
     public partial class CONEXION_MANUAL : Form
 
     {
-        private CONEXION.AES aes = new CONEXION.AES();
+        private CapaDatos.AES aes = new CapaDatos.AES();
         public CONEXION_MANUAL()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace PUNTO_DE_VENTA_CODIGO369_CSHARP.PANEL_DE_ADMINISTRACION_DEL_SOFTWARE
                 doc.Load("ConnectionString.xml");
                 XmlElement root = doc.DocumentElement;
                 dbcnString = root.Attributes[0].Value;
-                txtCnString.Text = (aes.Decrypt(dbcnString, CONEXION.Desencryptacion.appPwdUnique, int.Parse("256")));
+                txtCnString.Text = (aes.Decrypt(dbcnString, CapaDatos.Desencryptacion.appPwdUnique, int.Parse("256")));
 
             }
             catch (System.Security.Cryptography.CryptographicException ex)
@@ -46,7 +47,7 @@ namespace PUNTO_DE_VENTA_CODIGO369_CSHARP.PANEL_DE_ADMINISTRACION_DEL_SOFTWARE
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SavetoXML(aes.Encrypt(txtCnString.Text, CONEXION.Desencryptacion.appPwdUnique, int.Parse("256")));
+            SavetoXML(aes.Encrypt(txtCnString.Text, CapaDatos.Desencryptacion.appPwdUnique, int.Parse("256")));
             mostrar();
 
         }
@@ -57,7 +58,7 @@ namespace PUNTO_DE_VENTA_CODIGO369_CSHARP.PANEL_DE_ADMINISTRACION_DEL_SOFTWARE
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                con.ConnectionString = CapaDatos.Conexion.Conectar;
                 con.Open();
 
                 da = new SqlDataAdapter("mostrar_usuario", con);
@@ -79,7 +80,7 @@ namespace PUNTO_DE_VENTA_CODIGO369_CSHARP.PANEL_DE_ADMINISTRACION_DEL_SOFTWARE
 
             }
 
-            CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+            //CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
 
         }
         private void CONEXION_MANUAL_Load(object sender, EventArgs e)

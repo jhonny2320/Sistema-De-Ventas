@@ -5,7 +5,7 @@ using System.Xml;
 namespace CapaDatos
 
 {
-    class Desencryptacion
+    public class Desencryptacion
     {
         static private AES aes = new AES();
         static public string CnString;

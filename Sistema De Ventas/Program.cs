@@ -13,7 +13,7 @@ namespace Sistema_De_Ventas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CONEXION_MANUAL());
+            Application.Run(new ());
         }
     }
 }

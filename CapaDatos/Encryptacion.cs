@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 namespace CapaDatos
 {
     //formato AES
-    class AES
+    public class AES
     {
 
         private byte[] Encrypt(byte[] clearData, byte[] Key, byte[] IV)
