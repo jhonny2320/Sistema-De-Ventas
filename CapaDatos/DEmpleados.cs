@@ -288,10 +288,10 @@ namespace CapaDatos
 
                 //conexion correo
                 SqlParameter parEmp_Correo = new SqlParameter();
-                parEmp_direccion.ParameterName = "@Emp_Correo";
-                parEmp_direccion.SqlDbType = SqlDbType.VarChar;
-                parEmp_direccion.Size = 50;
-                parEmp_direccion.Value = Empleado.Emp_Correo;
+                parEmp_Correo.ParameterName = "@Emp_Correo";
+                parEmp_Correo.SqlDbType = SqlDbType.VarChar;
+                parEmp_Correo.Size = 50;
+                parEmp_Correo.Value = Empleado.Emp_Correo;
                 sqlcmd.Parameters.Add(parEmp_Correo);
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "OK" : "NO SE REALIZO EL REGISTRO";
@@ -408,10 +408,10 @@ namespace CapaDatos
 
                 //conexion correo
                 SqlParameter parEmp_Correo = new SqlParameter();
-                parEmp_direccion.ParameterName = "@Emp_Correo";
-                parEmp_direccion.SqlDbType = SqlDbType.VarChar;
-                parEmp_direccion.Size = 50;
-                parEmp_direccion.Value = Empleado.Emp_Correo;
+                parEmp_Correo.ParameterName = "@Emp_Correo";
+                parEmp_Correo.SqlDbType = SqlDbType.VarChar;
+                parEmp_Correo.Size = 50;
+                parEmp_Correo.Value = Empleado.Emp_Correo;
                 sqlcmd.Parameters.Add(parEmp_Correo);
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "OK" : "NO SE ACTUALIZO EL REGISTRO";

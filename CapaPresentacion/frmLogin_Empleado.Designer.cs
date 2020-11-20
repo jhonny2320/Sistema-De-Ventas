@@ -45,10 +45,16 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Registro = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.RecupCon = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -208,13 +214,53 @@
             // Registro
             // 
             this.Registro.AutoSize = true;
-            this.Registro.Location = new System.Drawing.Point(501, 340);
+            this.Registro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registro.Location = new System.Drawing.Point(641, 16);
             this.Registro.Name = "Registro";
-            this.Registro.Size = new System.Drawing.Size(106, 17);
+            this.Registro.Size = new System.Drawing.Size(127, 20);
             this.Registro.TabIndex = 14;
             this.Registro.TabStop = true;
             this.Registro.Text = "REGISTRARSE";
             this.Registro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Registro_LinkClicked);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(598, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(493, 589);
+            this.panel1.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(49, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "RECUPERAR CONTRASEÑA";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkRed;
+            this.panel2.Controls.Add(this.RecupCon);
+            this.panel2.Controls.Add(this.Registro);
+            this.panel2.Location = new System.Drawing.Point(0, 361);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(794, 53);
+            this.panel2.TabIndex = 15;
+            // 
+            // RecupCon
+            // 
+            this.RecupCon.AutoSize = true;
+            this.RecupCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecupCon.LinkArea = new System.Windows.Forms.LinkArea(0, 25);
+            this.RecupCon.Location = new System.Drawing.Point(336, 11);
+            this.RecupCon.Name = "RecupCon";
+            this.RecupCon.Size = new System.Drawing.Size(235, 25);
+            this.RecupCon.TabIndex = 15;
+            this.RecupCon.TabStop = true;
+            this.RecupCon.Text = "¿olvidaste tu contraseña?";
             // 
             // frmLogin_Empleado
             // 
@@ -222,7 +268,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(796, 414);
-            this.Controls.Add(this.Registro);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -240,6 +287,10 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +312,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel Registro;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.LinkLabel RecupCon;
     }
 }

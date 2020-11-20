@@ -65,6 +65,8 @@
             this.lblTotalEmpleados = new System.Windows.Forms.Label();
             this.tbMantenimiento = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.Correo = new System.Windows.Forms.Label();
             this.txtContraseñaC = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -87,8 +89,7 @@
             this.empleados_MostrarTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1TableAdapters.Empleados_MostrarTableAdapter();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1TableAdapters.EmpleadosTableAdapter();
-            this.Correo = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISTEMA_DE_VENTASDataSet1)).BeginInit();
@@ -292,7 +293,6 @@
             this.dgEmpleados.AutoGenerateColumns = false;
             this.dgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar,
             this.empidDataGridViewTextBoxColumn,
             this.nOMBRESDataGridViewTextBoxColumn,
             this.aPELLIDOSDataGridViewTextBoxColumn,
@@ -302,7 +302,8 @@
             this.dIRECCIONDataGridViewTextBoxColumn,
             this.tELEFONODataGridViewTextBoxColumn,
             this.aCCESODataGridViewTextBoxColumn,
-            this.uSUARIODataGridViewTextBoxColumn});
+            this.uSUARIODataGridViewTextBoxColumn,
+            this.Eliminar});
             this.dgEmpleados.DataSource = this.empleadosMostrarBindingSource1;
             this.dgEmpleados.Location = new System.Drawing.Point(47, 162);
             this.dgEmpleados.Margin = new System.Windows.Forms.Padding(4);
@@ -480,6 +481,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.Correo);
             this.groupBox1.Controls.Add(this.txtContraseñaC);
@@ -515,6 +517,27 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EMPLEADOS";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BackColor = System.Drawing.Color.Moccasin;
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCorreo.Location = new System.Drawing.Point(680, 257);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(267, 22);
+            this.txtCorreo.TabIndex = 58;
+            this.txtCorreo.UseSystemPasswordChar = true;
+            // 
+            // Correo
+            // 
+            this.Correo.AutoSize = true;
+            this.Correo.Location = new System.Drawing.Point(586, 257);
+            this.Correo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Correo.Name = "Correo";
+            this.Correo.Size = new System.Drawing.Size(68, 17);
+            this.Correo.TabIndex = 57;
+            this.Correo.Text = "CORREO";
             // 
             // txtContraseñaC
             // 
@@ -714,26 +737,15 @@
             // 
             this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // Correo
+            // label14
             // 
-            this.Correo.AutoSize = true;
-            this.Correo.Location = new System.Drawing.Point(586, 257);
-            this.Correo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Correo.Name = "Correo";
-            this.Correo.Size = new System.Drawing.Size(68, 17);
-            this.Correo.TabIndex = 57;
-            this.Correo.Text = "CORREO";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.BackColor = System.Drawing.Color.Moccasin;
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCorreo.Location = new System.Drawing.Point(680, 257);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(267, 22);
-            this.txtCorreo.TabIndex = 58;
-            this.txtCorreo.UseSystemPasswordChar = true;
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label14.Location = new System.Drawing.Point(664, 289);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(277, 17);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "SIRVE PARA RECUPERAR CONTRASEÑA";
             // 
             // EMPLEADOS
             // 
@@ -826,5 +838,6 @@
         private System.Windows.Forms.BindingSource empleadosMostrarBindingSource1;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label Correo;
+        private System.Windows.Forms.Label label14;
     }
 }
