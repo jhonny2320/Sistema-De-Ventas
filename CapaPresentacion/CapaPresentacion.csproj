@@ -117,6 +117,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SISTEMA_DE_VENTASDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SISTEMA_DE_VENTASDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SISTEMA_DE_VENTASDataSet1.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
@@ -175,6 +180,17 @@
     </None>
     <None Include="SISTEMA_DE_VENTASDataSet.xss">
       <DependentUpon>SISTEMA_DE_VENTASDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SISTEMA_DE_VENTASDataSet1.xsc">
+      <DependentUpon>SISTEMA_DE_VENTASDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SISTEMA_DE_VENTASDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SISTEMA_DE_VENTASDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SISTEMA_DE_VENTASDataSet1.xss">
+      <DependentUpon>SISTEMA_DE_VENTASDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

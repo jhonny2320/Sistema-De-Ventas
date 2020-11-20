@@ -41,7 +41,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tpListado = new System.Windows.Forms.TabPage();
-            this.dgServicios = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbMantenimiento = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,13 +54,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgServicios = new System.Windows.Forms.DataGridView();
+            this.seridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sERVICIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cOSTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicioMostrarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sISTEMA_DE_VENTASDataSet = new CapaPresentacion.SISTEMA_DE_VENTASDataSet();
+            this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.serviciosTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSetTableAdapters.serviciosTableAdapter();
+            this.servicioMostrarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.servicio_MostrarTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSetTableAdapters.Servicio_MostrarTableAdapter();
             this.tpListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tbMantenimiento.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioMostrarBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISTEMA_DE_VENTASDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioMostrarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -180,6 +192,7 @@
             // 
             // tpListado
             // 
+            this.tpListado.Controls.Add(this.dgServicios);
             this.tpListado.Controls.Add(this.lblTotalServicios);
             this.tpListado.Controls.Add(this.chkEliminar);
             this.tpListado.Controls.Add(this.txtBuscar);
@@ -187,7 +200,6 @@
             this.tpListado.Controls.Add(this.btnEliminar);
             this.tpListado.Controls.Add(this.btnBuscar);
             this.tpListado.Controls.Add(this.label7);
-            this.tpListado.Controls.Add(this.dgServicios);
             this.tpListado.Location = new System.Drawing.Point(4, 25);
             this.tpListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpListado.Name = "tpListado";
@@ -196,26 +208,6 @@
             this.tpListado.TabIndex = 0;
             this.tpListado.Text = "LISTADO";
             this.tpListado.UseVisualStyleBackColor = true;
-            // 
-            // dgServicios
-            // 
-            this.dgServicios.AllowUserToAddRows = false;
-            this.dgServicios.AllowUserToDeleteRows = false;
-            this.dgServicios.AllowUserToOrderColumns = true;
-            this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.dgServicios.Location = new System.Drawing.Point(21, 167);
-            this.dgServicios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgServicios.MultiSelect = false;
-            this.dgServicios.Name = "dgServicios";
-            this.dgServicios.ReadOnly = true;
-            this.dgServicios.RowHeadersWidth = 51;
-            this.dgServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgServicios.Size = new System.Drawing.Size(549, 254);
-            this.dgServicios.TabIndex = 0;
-            this.dgServicios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgServicios_CellContentClick);
-            this.dgServicios.DoubleClick += new System.EventHandler(this.dgServicios_DoubleClick);
             // 
             // tabControl1
             // 
@@ -362,14 +354,81 @@
             // 
             this.errorIcono.ContainerControl = this;
             // 
-            // Eliminar
+            // dgServicios
             // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Visible = false;
-            this.Eliminar.Width = 125;
+            this.dgServicios.AllowUserToAddRows = false;
+            this.dgServicios.AllowUserToDeleteRows = false;
+            this.dgServicios.AllowUserToOrderColumns = true;
+            this.dgServicios.AutoGenerateColumns = false;
+            this.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.seridDataGridViewTextBoxColumn,
+            this.sERVICIODataGridViewTextBoxColumn,
+            this.cOSTODataGridViewTextBoxColumn});
+            this.dgServicios.DataSource = this.servicioMostrarBindingSource1;
+            this.dgServicios.Location = new System.Drawing.Point(47, 182);
+            this.dgServicios.Name = "dgServicios";
+            this.dgServicios.ReadOnly = true;
+            this.dgServicios.RowHeadersWidth = 51;
+            this.dgServicios.RowTemplate.Height = 24;
+            this.dgServicios.Size = new System.Drawing.Size(431, 250);
+            this.dgServicios.TabIndex = 8;
+            this.dgServicios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // seridDataGridViewTextBoxColumn
+            // 
+            this.seridDataGridViewTextBoxColumn.DataPropertyName = "Ser_id";
+            this.seridDataGridViewTextBoxColumn.HeaderText = "Ser_id";
+            this.seridDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seridDataGridViewTextBoxColumn.Name = "seridDataGridViewTextBoxColumn";
+            this.seridDataGridViewTextBoxColumn.ReadOnly = true;
+            this.seridDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sERVICIODataGridViewTextBoxColumn
+            // 
+            this.sERVICIODataGridViewTextBoxColumn.DataPropertyName = "SERVICIO";
+            this.sERVICIODataGridViewTextBoxColumn.HeaderText = "SERVICIO";
+            this.sERVICIODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sERVICIODataGridViewTextBoxColumn.Name = "sERVICIODataGridViewTextBoxColumn";
+            this.sERVICIODataGridViewTextBoxColumn.ReadOnly = true;
+            this.sERVICIODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cOSTODataGridViewTextBoxColumn
+            // 
+            this.cOSTODataGridViewTextBoxColumn.DataPropertyName = "COSTO";
+            this.cOSTODataGridViewTextBoxColumn.HeaderText = "COSTO";
+            this.cOSTODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cOSTODataGridViewTextBoxColumn.Name = "cOSTODataGridViewTextBoxColumn";
+            this.cOSTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.cOSTODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // servicioMostrarBindingSource1
+            // 
+            this.servicioMostrarBindingSource1.DataMember = "Servicio_Mostrar";
+            this.servicioMostrarBindingSource1.DataSource = this.sISTEMA_DE_VENTASDataSet;
+            // 
+            // sISTEMA_DE_VENTASDataSet
+            // 
+            this.sISTEMA_DE_VENTASDataSet.DataSetName = "SISTEMA_DE_VENTASDataSet";
+            this.sISTEMA_DE_VENTASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // serviciosBindingSource
+            // 
+            this.serviciosBindingSource.DataMember = "servicios";
+            this.serviciosBindingSource.DataSource = this.sISTEMA_DE_VENTASDataSet;
+            // 
+            // serviciosTableAdapter
+            // 
+            this.serviciosTableAdapter.ClearBeforeFill = true;
+            // 
+            // servicioMostrarBindingSource
+            // 
+            this.servicioMostrarBindingSource.DataMember = "Servicio_Mostrar";
+            this.servicioMostrarBindingSource.DataSource = this.sISTEMA_DE_VENTASDataSet;
+            // 
+            // servicio_MostrarTableAdapter
+            // 
+            this.servicio_MostrarTableAdapter.ClearBeforeFill = true;
             // 
             // FRMServicios
             // 
@@ -386,12 +445,16 @@
             this.Load += new System.EventHandler(this.FRMServicios_Load);
             this.tpListado.ResumeLayout(false);
             this.tpListado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tbMantenimiento.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioMostrarBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sISTEMA_DE_VENTASDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioMostrarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,7 +474,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tpListado;
-        private System.Windows.Forms.DataGridView dgServicios;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbMantenimiento;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -425,6 +487,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.ErrorProvider errorIcono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
+        private System.Windows.Forms.DataGridView dgServicios;
+        private SISTEMA_DE_VENTASDataSet sISTEMA_DE_VENTASDataSet;
+        private System.Windows.Forms.BindingSource serviciosBindingSource;
+        private SISTEMA_DE_VENTASDataSetTableAdapters.serviciosTableAdapter serviciosTableAdapter;
+        private System.Windows.Forms.BindingSource servicioMostrarBindingSource;
+        private SISTEMA_DE_VENTASDataSetTableAdapters.Servicio_MostrarTableAdapter servicio_MostrarTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sERVICIODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cOSTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource servicioMostrarBindingSource1;
     }
 }

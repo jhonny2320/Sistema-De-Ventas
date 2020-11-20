@@ -111,6 +111,10 @@ namespace CapaPresentacion
         private void EMPLEADOS_Load(object sender, EventArgs e)
 
         {
+            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet1.Empleados' Puede moverla o quitarla según sea necesario.
+            this.empleadosTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet1.Empleados);
+            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet1.Empleados_Mostrar' Puede moverla o quitarla según sea necesario.
+            this.empleados_MostrarTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet1.Empleados_Mostrar);
             this.Top = 0;
             this.Left = 0;
 

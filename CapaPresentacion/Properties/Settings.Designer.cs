@@ -33,5 +33,16 @@ namespace CapaPresentacion.Properties {
                 return ((string)(this["SISTEMA_DE_VENTASConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JHONNY-PC;Initial Catalog=\"SISTEMA DE VENTAS\";User ID=jhonny;Password" +
+            "=admin962011")]
+        public string SISTEMA_DE_VENTASConnectionString1 {
+            get {
+                return ((string)(this["SISTEMA_DE_VENTASConnectionString1"]));
+            }
+        }
     }
 }

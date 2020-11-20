@@ -75,26 +75,32 @@ namespace CapaPresentacion
             }
         }
 
-        private void OcultarColumnas()
+        /*private void OcultarColumnas()
         {
+            this.dgServicios.Columns[0].Visible = false;
             this.dgServicios.Columns[1].Visible = false;
-        }
+
+        }*/
         private void mostrar()
         {
             this.dgServicios.DataSource = NServicios.Mostrar();
-            this.OcultarColumnas();
+            //this.OcultarColumnas();
             lblTotalServicios.Text = "Total de registros: " + Convert.ToString(dgServicios.Rows.Count);
         }
 
         private void BuscarServicio()
         {
             this.dgServicios.DataSource = NServicios.BuscarServicio(this.txtBuscar.Text);
-            this.OcultarColumnas();
+            //this.OcultarColumnas();
             lblTotalServicios.Text = "Total de registros: " + Convert.ToString(dgServicios.Rows.Count);
         }
 
         private void FRMServicios_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet.Servicio_Mostrar' Puede moverla o quitarla según sea necesario.
+            this.servicio_MostrarTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet.Servicio_Mostrar);
+            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet.servicios' Puede moverla o quitarla según sea necesario.
+            this.serviciosTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet.servicios);
             //this.Top = 0;
             //this.Left = 0;
             this.mostrar();
@@ -275,7 +281,14 @@ namespace CapaPresentacion
             }
         }
 
-
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgServicios.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dgServicios.Rows[e.RowIndex].Cells["Eliminar"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+            }
+        }
     }
 }
 
