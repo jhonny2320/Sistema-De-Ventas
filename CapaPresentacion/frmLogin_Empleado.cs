@@ -3,6 +3,9 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using CapaDatos;
+using System.Net.Mail;
+using System.Net;
+
 namespace CapaPresentacion
 {
     public partial class frmLogin_Empleado : Form
@@ -107,6 +110,76 @@ namespace CapaPresentacion
         private void cbCorreos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void Mostrar_Empleados()
+        {
+            DataTable DtMostrar = new DataTable("Empleados");
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                string resultado;
+                sqlcon.ConnectionString = Conexion.Conectar;
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = sqlcon;
+                sqlCmd.CommandText = "BuscarContraseña";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter sqlData = new SqlDataAdapter(sqlCmd);
+                sqlData.Fill(DtMostrar);
+                sqlData.SelectCommand.Parameters.AddWithValue("@correo", cbCorreos.Text);
+                sqlcon.Open();
+
+
+            }
+#pragma warning disable CS0168 // La variable 'ex' se ha declarado pero nunca se usa
+            catch (Exception ex)
+#pragma warning restore CS0168 // La variable 'ex' se ha declarado pero nunca se usa
+            {
+                DtMostrar = null;
+            }
+
+
+        }
+        internal void enviarCorreo(string emisor, string password, string mensaje, string asunto, string destinatario, string ruta)
+        {
+            try
+            {
+                MailMessage correos = new MailMessage();
+                SmtpClient envios = new SmtpClient();
+                correos.To.Clear();
+                correos.Body = "";
+                correos.Subject = "";
+                correos.Body = mensaje;
+                correos.Subject = asunto;
+                correos.IsBodyHtml = true;
+                correos.To.Add((destinatario));
+                correos.From = new MailAddress(emisor);
+                envios.Credentials = new NetworkCredential(emisor, password);
+
+                envios.Host = "smtp.gmail.com";
+                envios.Port = 587;
+                envios.EnableSsl = true;
+
+                envios.Send(correos);
+                MessageBox.Show("Contraseña Enviada, revisa tu correo Electronico", "Restauracion de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PanelRestaurarCuenta.Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR, revisa tu correo Electronico", "Restauracion de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+        }
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+            Mostrar_Empleados();
+            richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblResultadoContraseña.Text);
+            enviarCorreo("dj.jhonsi12@gmail.com", "***************", richTextBox1.Text, "Solicitud de Contraseña", cbCorreos.Text, "");
+
+            
         }
     }
 }

@@ -148,9 +148,9 @@ namespace CapaPresentacion
 
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*FRMServicios servicios = new FRMServicios();
+            FRMServicios servicios = new FRMServicios();
             servicios.MdiParent = this;
-            servicios.Show();*/
+            servicios.Show();
         }
 
         private void FRMSisVentas_Load(object sender, EventArgs e)
