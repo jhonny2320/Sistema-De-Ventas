@@ -175,7 +175,7 @@ namespace CapaDatos
         }
 
         public DEmpleados(int Emp_id, string Emp_nombre, string Emp_apellido, int Emp_idTipoDocumento,
-            string Emp_documento, string Emp_telefono, string Emp_direccion, string Emp_acceso, string Emp_usuario, string Emp_contraseña,string Emp_Correo, string textoBuscar)
+            string Emp_documento, string Emp_telefono, string Emp_direccion, string Emp_Correo, string Emp_acceso, string Emp_usuario, string Emp_contraseña, string textoBuscar)
 
         {
             this.Emp_Id = Emp_id;
@@ -262,6 +262,14 @@ namespace CapaDatos
                 parEmp_telefono.Value = Empleado.Emp_Telefono;
                 sqlcmd.Parameters.Add(parEmp_telefono);
 
+                //conexion correo
+                SqlParameter parEmp_Correo = new SqlParameter();
+                parEmp_Correo.ParameterName = "@Emp_correo";
+                parEmp_Correo.SqlDbType = SqlDbType.VarChar;
+                parEmp_Correo.Size = 50;
+                parEmp_Correo.Value = Empleado.Emp_Correo;
+                sqlcmd.Parameters.Add(parEmp_Correo);
+
                 //conexion acceso
                 SqlParameter parEmp_acceso = new SqlParameter();
                 parEmp_acceso.ParameterName = "@Emp_acceso";
@@ -286,13 +294,7 @@ namespace CapaDatos
                 parEmp_contraseña.Value = Empleado.Emp_Contraseña;
                 sqlcmd.Parameters.Add(parEmp_contraseña);
 
-                //conexion correo
-                SqlParameter parEmp_Correo = new SqlParameter();
-                parEmp_Correo.ParameterName = "@Emp_Correo";
-                parEmp_Correo.SqlDbType = SqlDbType.VarChar;
-                parEmp_Correo.Size = 50;
-                parEmp_Correo.Value = Empleado.Emp_Correo;
-                sqlcmd.Parameters.Add(parEmp_Correo);
+                
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "OK" : "NO SE REALIZO EL REGISTRO";
 
@@ -382,6 +384,14 @@ namespace CapaDatos
                 parEmp_telefono.Value = Empleado.Emp_Telefono;
                 sqlcmd.Parameters.Add(parEmp_telefono);
 
+                //conexion correo
+                SqlParameter parEmp_Correo = new SqlParameter();
+                parEmp_Correo.ParameterName = "@Emp_correo";
+                parEmp_Correo.SqlDbType = SqlDbType.VarChar;
+                parEmp_Correo.Size = 50;
+                parEmp_Correo.Value = Empleado.Emp_Correo;
+                sqlcmd.Parameters.Add(parEmp_Correo);
+
                 //conexion acceso
                 SqlParameter parEmp_acceso = new SqlParameter();
                 parEmp_acceso.ParameterName = "@Emp_acceso";
@@ -406,13 +416,7 @@ namespace CapaDatos
                 parEmp_contraseña.Value = Empleado.Emp_Contraseña;
                 sqlcmd.Parameters.Add(parEmp_contraseña);
 
-                //conexion correo
-                SqlParameter parEmp_Correo = new SqlParameter();
-                parEmp_Correo.ParameterName = "@Emp_Correo";
-                parEmp_Correo.SqlDbType = SqlDbType.VarChar;
-                parEmp_Correo.Size = 50;
-                parEmp_Correo.Value = Empleado.Emp_Correo;
-                sqlcmd.Parameters.Add(parEmp_Correo);
+                
 
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "OK" : "NO SE ACTUALIZO EL REGISTRO";
 

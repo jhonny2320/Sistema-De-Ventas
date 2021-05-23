@@ -89,10 +89,6 @@ namespace CapaPresentacion
 
         private void FRMServicios_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet.Servicio_Mostrar' Puede moverla o quitarla según sea necesario.
-            this.servicio_MostrarTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet.Servicio_Mostrar);
-            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet.servicios' Puede moverla o quitarla según sea necesario.
-            this.serviciosTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet.servicios);
             //this.Top = 0;
             //this.Left = 0;
             this.mostrar();

@@ -154,10 +154,9 @@ namespace CapaPresentacion
 
         private void FRMIngreso_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet2.Venta_Mostrar' Puede moverla o quitarla según sea necesario.
-            this.venta_MostrarTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet2.Venta_Mostrar);
-            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet2.Servicio_Mostrar' Puede moverla o quitarla según sea necesario.
-            this.servicio_MostrarTableAdapter.Fill(this.sISTEMA_DE_VENTASDataSet2.Servicio_Mostrar);
+            // TODO: esta línea de código carga datos en la tabla 'sISTEMA_DE_VENTASDataSet3.Venta_Mostrar' Puede moverla o quitarla según sea necesario.
+            this.venta_MostrarTableAdapter1.Fill(this.sISTEMA_DE_VENTASDataSet3.Venta_Mostrar);
+
             this.mostrar();
             this.Habilitar(false);
             this.Botones();

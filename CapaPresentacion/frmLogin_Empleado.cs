@@ -14,7 +14,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             lblHora.Text = DateTime.Now.ToString();
-            PanelRestaurarCuenta.Visible = false;
 
 
         }
@@ -38,22 +37,34 @@ namespace CapaPresentacion
         {
             DataTable datos = CapaNegocio.NEmpleados.Login(this.txtUsuario.Text, this.txtContraseña.Text);
             //si existe el usuario
-            if (datos.Rows.Count == 0)
+            if (txtUsuario.Text != "USUARIO")
             {
-                MessageBox.Show("No Tiene Acceso Al Sistema De Ventas", "Sistema De Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                FRMSisVentas PRINCIPAL = new FRMSisVentas();
-                PRINCIPAL.idEmpleado = datos.Rows[0][0].ToString();
-                PRINCIPAL.Emp_Nombre = datos.Rows[0][1].ToString();
-                PRINCIPAL.Emp_Apellido = datos.Rows[0][2].ToString();
-                PRINCIPAL.Emp_Acceso = datos.Rows[0][3].ToString();
+                if (txtContraseña.Text != "CONTRASEÑA")
+                {
 
-                PRINCIPAL.Show();
-                this.Hide();
 
+
+                    if (datos.Rows.Count == 0)
+                    {
+                        //MessageBox.Show("No Tiene Acceso Al Sistema De Ventas", "Sistema De Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        msgError("USUARIO O CONTRASEÑA INCORRECTO");                    
+                    }
+                    else
+                    {
+                        FRMSisVentas PRINCIPAL = new FRMSisVentas();
+                        PRINCIPAL.idEmpleado = datos.Rows[0][0].ToString();
+                        PRINCIPAL.Emp_Nombre = datos.Rows[0][1].ToString();
+                        PRINCIPAL.Emp_Apellido = datos.Rows[0][2].ToString();
+                        PRINCIPAL.Emp_Acceso = datos.Rows[0][3].ToString();
+                        MessageBox.Show("BIENVENIDO " + PRINCIPAL.Emp_Nombre);
+                        PRINCIPAL.Show();
+                        this.Hide();
+
+                    }
+                }
+                else msgError("INGRESE CONTRASEÑA");
             }
+            else msgError("INGRESE USUARIO");
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -61,13 +72,8 @@ namespace CapaPresentacion
 
         }
 
-        private void Registro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            EMPLEADOS registro = new EMPLEADOS();
-            registro.TableroControl();
-            registro.ShowDialog();
-        }
-        public void  CBCorreos()
+
+        public void CBCorreos()
         {
             DataTable DtMostrar = new DataTable("Empleados");
             SqlConnection sqlcon = new SqlConnection();
@@ -81,8 +87,8 @@ namespace CapaPresentacion
 
                 SqlDataAdapter sqlData = new SqlDataAdapter(sqlCmd);
                 sqlData.Fill(DtMostrar);
-                cbCorreos.ValueMember = "Emp_Correo";
-                cbCorreos.DisplayMember = "Emp_Correo";
+                cbCorreos.ValueMember = "Emp_correo";
+                cbCorreos.DisplayMember = "Emp_correo";
                 cbCorreos.DataSource = DtMostrar;
 
 
@@ -98,13 +104,11 @@ namespace CapaPresentacion
         }
         private void RecupCon_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PanelRestaurarCuenta.Visible = true;
             CBCorreos();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            PanelRestaurarCuenta.Visible = false;
         }
 
         private void cbCorreos_SelectedIndexChanged(object sender, EventArgs e)
@@ -162,7 +166,6 @@ namespace CapaPresentacion
 
                 envios.Send(correos);
                 MessageBox.Show("Contraseña Enviada, revisa tu correo Electronico", "Restauracion de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                PanelRestaurarCuenta.Visible = false;
 
             }
             catch (Exception ex)
@@ -179,7 +182,78 @@ namespace CapaPresentacion
             richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblResultadoContraseña.Text);
             enviarCorreo("dj.jhonsi12@gmail.com", "***************", richTextBox1.Text, "Solicitud de Contraseña", cbCorreos.Text, "");
 
-            
+
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //mover formulario
+        int posY = 0;
+        int posX = 0;
+
+        private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "USUARIO")
+            {
+                txtUsuario.Text = "";
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "USUARIO";
+            }
+        }
+
+        private void txtContraseña_Enter(object sender, EventArgs e)
+        {
+            if (txtContraseña.Text == "CONTRASEÑA")
+            {
+                txtContraseña.Text = "";
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtContraseña_Leave(object sender, EventArgs e)
+        {
+            if (txtContraseña.Text == "")
+            {
+                txtContraseña.Text = "CONTRASEÑA";
+                txtContraseña.UseSystemPasswordChar = false;
+
+            }
+        }
+        private void msgError(string msg)
+        {
+            lblErrorMensaje.Text = " " + msg;
+            lblErrorMensaje.Visible = true;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

@@ -12,7 +12,7 @@ namespace CapaDatos
         static string dbcnString;
         //cuarto nivel de seguridad
 
-        static public string appPwdUnique = "Ada369.codigo369.BASEADA.Suerte_pa_la_proximaÑ";
+        static public string appPwdUnique = "Ada369.codigo369@.BASEADA.Suerte_pa_la_proximaÑ";
 
         //leer archivo de encriptacion
         public static object checkServer()
@@ -25,16 +25,16 @@ namespace CapaDatos
             return CnString;
 
         }
-        //public static object checkServerWEB()
-        //{
-        //    XmlDocument doc = new XmlDocument();
-        //    doc.Load("ConnectionString.xml");
-        //    XmlElement root = doc.DocumentElement;
-        //    dbcnString = root.Attributes[0].Value;
-        //    CnString = (aes.Decrypt(dbcnString, appPwdUnique, int.Parse("256")));
-        //    return CnString;
+        /*public static object checkServerWEB()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("ConnectionString.xml");
+            XmlElement root = doc.DocumentElement;
+            dbcnString = root.Attributes[0].Value;
+            CnString = (aes.Decrypt(dbcnString, appPwdUnique, int.Parse("256")));
+            return CnString;
 
-        //}
+        }*/
         internal class label
         {
 

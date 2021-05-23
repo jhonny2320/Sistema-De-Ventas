@@ -51,9 +51,10 @@
             // btnAtras
             // 
             this.btnAtras.AutoSize = true;
-            this.btnAtras.Location = new System.Drawing.Point(255, 438);
+            this.btnAtras.Location = new System.Drawing.Point(340, 539);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(53, 23);
+            this.btnAtras.Size = new System.Drawing.Size(71, 28);
             this.btnAtras.TabIndex = 12;
             this.btnAtras.Text = "ATRAS";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -62,43 +63,49 @@
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 125;
             // 
             // lblTotalArticulos
             // 
             this.lblTotalArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalArticulos.AutoSize = true;
-            this.lblTotalArticulos.Location = new System.Drawing.Point(326, 102);
+            this.lblTotalArticulos.Location = new System.Drawing.Point(435, 126);
+            this.lblTotalArticulos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalArticulos.Name = "lblTotalArticulos";
-            this.lblTotalArticulos.Size = new System.Drawing.Size(81, 13);
+            this.lblTotalArticulos.Size = new System.Drawing.Size(108, 17);
             this.lblTotalArticulos.TabIndex = 7;
             this.lblTotalArticulos.Text = "lblTotalArticulos";
             // 
             // txtBuscar
             // 
             this.txtBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBuscar.Location = new System.Drawing.Point(75, 54);
+            this.txtBuscar.Location = new System.Drawing.Point(100, 66);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(222, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(295, 22);
             this.txtBuscar.TabIndex = 5;
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 62);
+            this.label8.Location = new System.Drawing.Point(19, 76);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.Size = new System.Drawing.Size(68, 17);
             this.label8.TabIndex = 4;
             this.label8.Text = "NOMBRE";
             // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBuscar.Location = new System.Drawing.Point(326, 57);
+            this.btnBuscar.Location = new System.Drawing.Point(435, 70);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -110,9 +117,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(14, 20);
+            this.label7.Location = new System.Drawing.Point(19, 25);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(225, 18);
+            this.label7.Size = new System.Drawing.Size(275, 24);
             this.label7.TabIndex = 1;
             this.label7.Text = "ARTICULOS REGISTRADOS";
             // 
@@ -125,12 +133,14 @@
             this.dgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dgArticulos.Location = new System.Drawing.Point(6, 137);
+            this.dgArticulos.Location = new System.Drawing.Point(8, 169);
+            this.dgArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgArticulos.MultiSelect = false;
             this.dgArticulos.Name = "dgArticulos";
             this.dgArticulos.ReadOnly = true;
+            this.dgArticulos.RowHeadersWidth = 51;
             this.dgArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgArticulos.Size = new System.Drawing.Size(514, 206);
+            this.dgArticulos.Size = new System.Drawing.Size(685, 254);
             this.dgArticulos.TabIndex = 0;
             this.dgArticulos.DoubleClick += new System.EventHandler(this.dgArticulos_DoubleClick);
             // 
@@ -139,9 +149,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(24, 9);
+            this.label1.Location = new System.Drawing.Point(32, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 13;
             this.label1.Text = "ARTICULOS";
             // 
@@ -152,10 +163,11 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpListado);
-            this.tabControl1.Location = new System.Drawing.Point(7, 44);
+            this.tabControl1.Location = new System.Drawing.Point(9, 54);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(534, 392);
+            this.tabControl1.Size = new System.Drawing.Size(712, 482);
             this.tabControl1.TabIndex = 14;
             // 
             // tpListado
@@ -166,10 +178,11 @@
             this.tpListado.Controls.Add(this.btnBuscar);
             this.tpListado.Controls.Add(this.label7);
             this.tpListado.Controls.Add(this.dgArticulos);
-            this.tpListado.Location = new System.Drawing.Point(4, 22);
+            this.tpListado.Location = new System.Drawing.Point(4, 25);
+            this.tpListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpListado.Name = "tpListado";
-            this.tpListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tpListado.Size = new System.Drawing.Size(526, 366);
+            this.tpListado.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpListado.Size = new System.Drawing.Size(704, 453);
             this.tpListado.TabIndex = 0;
             this.tpListado.Text = "LISTADO";
             this.tpListado.UseVisualStyleBackColor = true;
@@ -180,14 +193,15 @@
             // 
             // FrmVistaArticulo_Ingreso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(559, 484);
+            this.ClientSize = new System.Drawing.Size(745, 596);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmVistaArticulo_Ingreso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SELECCIONE EL ARTICULO";

@@ -104,8 +104,8 @@ namespace CapaPresentacion
         }
         private void FRMClientes_Load(object sender, EventArgs e)
         {
-            this.Top = 0;
-            this.Left = 0;
+            //this.Top = 0;
+            //this.Left = 0;
 
             this.mostrar();
             this.Habilitar(false);
@@ -309,6 +309,11 @@ namespace CapaPresentacion
         private void cbidTD_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

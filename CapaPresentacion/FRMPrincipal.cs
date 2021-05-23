@@ -113,9 +113,7 @@ namespace CapaPresentacion
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLogin_Empleado login = new frmLogin_Empleado();
-            login.Show();
-            this.Hide();
+            Application.Exit();
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,9 +139,9 @@ namespace CapaPresentacion
 
         private void trabajadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EMPLEADOS empleados = new EMPLEADOS();
-            empleados.MdiParent = this;
-            empleados.Show();
+            EMPLEADOS frmempleados = new EMPLEADOS();
+            frmempleados.MdiParent = this;
+            frmempleados.Show();
         }
 
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,7 +172,7 @@ namespace CapaPresentacion
             {
                 if (Emp_Acceso == "USUARIO")
                 {
-                    this.MnAlmacen.Enabled = false;
+                    this.MnAlmacen.Enabled = true;
                     this.MnCompras.Enabled = false;
                     this.MnVentas.Enabled = true;
                     this.MnMantenimiento.Enabled = false;
@@ -197,5 +195,30 @@ namespace CapaPresentacion
             }
         }
 
+        
+        private void Cerrar_MouseUp(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void toolStripStatusLabel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if(MessageBox.Show("Estas seguro de cerrar la aplicacion","Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning)==DialogResult.Yes)
+            
+                Application.Exit();         
+            
+        }
+
+        private void Cerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro de cambiar de usuario", "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                frmLogin_Empleado login = new frmLogin_Empleado();
+                login.Show();
+                this.Hide();
+            }
+        }
     }
 }

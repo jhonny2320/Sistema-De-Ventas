@@ -47,14 +47,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.dgEmpleados = new System.Windows.Forms.DataGridView();
-            this.empleadosMostrarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.empidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMBRESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aPELLIDOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dIRECCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tELEFONODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCCESODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uSUARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleadosMostrarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sISTEMA_DE_VENTASDataSet1 = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1();
+            this.empleadosMostrarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpListado = new System.Windows.Forms.TabPage();
             this.lblTotalEmpleados = new System.Windows.Forms.Label();
             this.tbMantenimiento = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.Correo = new System.Windows.Forms.Label();
             this.txtContraseñaC = new System.Windows.Forms.TextBox();
@@ -75,29 +85,18 @@
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.empleadosMostrarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleados_MostrarTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1TableAdapters.Empleados_MostrarTableAdapter();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosTableAdapter = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1TableAdapters.EmpleadosTableAdapter();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.empidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMBRESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aPELLIDOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOCUMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dIRECCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tELEFONODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aCCESODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uSUARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISTEMA_DE_VENTASDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpListado.SuspendLayout();
             this.tbMantenimiento.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -315,15 +314,109 @@
             this.dgEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEmpleados_CellContentClick);
             this.dgEmpleados.DoubleClick += new System.EventHandler(this.dgEmpleados_DoubleClick);
             // 
-            // empleadosMostrarBindingSource1
+            // Eliminar
             // 
-            this.empleadosMostrarBindingSource1.DataMember = "Empleados_Mostrar";
-            this.empleadosMostrarBindingSource1.DataSource = this.sISTEMA_DE_VENTASDataSet1;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 125;
+            // 
+            // empidDataGridViewTextBoxColumn
+            // 
+            this.empidDataGridViewTextBoxColumn.DataPropertyName = "Emp_id";
+            this.empidDataGridViewTextBoxColumn.HeaderText = "Emp_id";
+            this.empidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.empidDataGridViewTextBoxColumn.Name = "empidDataGridViewTextBoxColumn";
+            this.empidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empidDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nOMBRESDataGridViewTextBoxColumn
+            // 
+            this.nOMBRESDataGridViewTextBoxColumn.DataPropertyName = "NOMBRES";
+            this.nOMBRESDataGridViewTextBoxColumn.HeaderText = "NOMBRES";
+            this.nOMBRESDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nOMBRESDataGridViewTextBoxColumn.Name = "nOMBRESDataGridViewTextBoxColumn";
+            this.nOMBRESDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nOMBRESDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aPELLIDOSDataGridViewTextBoxColumn
+            // 
+            this.aPELLIDOSDataGridViewTextBoxColumn.DataPropertyName = "APELLIDOS";
+            this.aPELLIDOSDataGridViewTextBoxColumn.HeaderText = "APELLIDOS";
+            this.aPELLIDOSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aPELLIDOSDataGridViewTextBoxColumn.Name = "aPELLIDOSDataGridViewTextBoxColumn";
+            this.aPELLIDOSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aPELLIDOSDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tIPODEDOCUMENTODataGridViewTextBoxColumn
+            // 
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "TIPO_DE_DOCUMENTO";
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.HeaderText = "TIPO_DE_DOCUMENTO";
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Name = "tIPODEDOCUMENTODataGridViewTextBoxColumn";
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dOCUMENTODataGridViewTextBoxColumn
+            // 
+            this.dOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "DOCUMENTO";
+            this.dOCUMENTODataGridViewTextBoxColumn.HeaderText = "DOCUMENTO";
+            this.dOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dOCUMENTODataGridViewTextBoxColumn.Name = "dOCUMENTODataGridViewTextBoxColumn";
+            this.dOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.dOCUMENTODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dIRECCIONDataGridViewTextBoxColumn
+            // 
+            this.dIRECCIONDataGridViewTextBoxColumn.DataPropertyName = "DIRECCION";
+            this.dIRECCIONDataGridViewTextBoxColumn.HeaderText = "DIRECCION";
+            this.dIRECCIONDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dIRECCIONDataGridViewTextBoxColumn.Name = "dIRECCIONDataGridViewTextBoxColumn";
+            this.dIRECCIONDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dIRECCIONDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tELEFONODataGridViewTextBoxColumn
+            // 
+            this.tELEFONODataGridViewTextBoxColumn.DataPropertyName = "TELEFONO";
+            this.tELEFONODataGridViewTextBoxColumn.HeaderText = "TELEFONO";
+            this.tELEFONODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tELEFONODataGridViewTextBoxColumn.Name = "tELEFONODataGridViewTextBoxColumn";
+            this.tELEFONODataGridViewTextBoxColumn.ReadOnly = true;
+            this.tELEFONODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aCCESODataGridViewTextBoxColumn
+            // 
+            this.aCCESODataGridViewTextBoxColumn.DataPropertyName = "ACCESO";
+            this.aCCESODataGridViewTextBoxColumn.HeaderText = "ACCESO";
+            this.aCCESODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aCCESODataGridViewTextBoxColumn.Name = "aCCESODataGridViewTextBoxColumn";
+            this.aCCESODataGridViewTextBoxColumn.ReadOnly = true;
+            this.aCCESODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // uSUARIODataGridViewTextBoxColumn
+            // 
+            this.uSUARIODataGridViewTextBoxColumn.DataPropertyName = "USUARIO";
+            this.uSUARIODataGridViewTextBoxColumn.HeaderText = "USUARIO";
+            this.uSUARIODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.uSUARIODataGridViewTextBoxColumn.Name = "uSUARIODataGridViewTextBoxColumn";
+            this.uSUARIODataGridViewTextBoxColumn.ReadOnly = true;
+            this.uSUARIODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // empleadosMostrarBindingSource
+            // 
+            this.empleadosMostrarBindingSource.DataMember = "Empleados_Mostrar";
+            this.empleadosMostrarBindingSource.DataSource = this.sISTEMA_DE_VENTASDataSet1;
             // 
             // sISTEMA_DE_VENTASDataSet1
             // 
             this.sISTEMA_DE_VENTASDataSet1.DataSetName = "SISTEMA_DE_VENTASDataSet1";
             this.sISTEMA_DE_VENTASDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empleadosMostrarBindingSource1
+            // 
+            this.empleadosMostrarBindingSource1.DataMember = "Empleados_Mostrar";
+            this.empleadosMostrarBindingSource1.DataSource = this.sISTEMA_DE_VENTASDataSet1;
             // 
             // tabControl1
             // 
@@ -381,7 +474,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.Correo);
             this.groupBox1.Controls.Add(this.txtContraseñaC);
@@ -418,21 +510,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EMPLEADOS";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label14.Location = new System.Drawing.Point(664, 289);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(277, 17);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "SIRVE PARA RECUPERAR CONTRASEÑA";
-            // 
             // txtCorreo
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.Moccasin;
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCorreo.Location = new System.Drawing.Point(680, 257);
+            this.txtCorreo.Location = new System.Drawing.Point(680, 103);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(267, 22);
@@ -442,7 +524,7 @@
             // Correo
             // 
             this.Correo.AutoSize = true;
-            this.Correo.Location = new System.Drawing.Point(586, 257);
+            this.Correo.Location = new System.Drawing.Point(586, 103);
             this.Correo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(68, 17);
@@ -453,7 +535,7 @@
             // 
             this.txtContraseñaC.BackColor = System.Drawing.Color.Moccasin;
             this.txtContraseñaC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContraseñaC.Location = new System.Drawing.Point(680, 217);
+            this.txtContraseñaC.Location = new System.Drawing.Point(680, 255);
             this.txtContraseñaC.Margin = new System.Windows.Forms.Padding(4);
             this.txtContraseñaC.Name = "txtContraseñaC";
             this.txtContraseñaC.Size = new System.Drawing.Size(267, 22);
@@ -463,7 +545,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(475, 225);
+            this.label13.Location = new System.Drawing.Point(475, 263);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(188, 17);
@@ -473,7 +555,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(584, 102);
+            this.label12.Location = new System.Drawing.Point(584, 140);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 17);
@@ -490,7 +572,7 @@
             this.cbAcceso.Items.AddRange(new object[] {
             "ADMINISTRADOR",
             "USUARIO"});
-            this.cbAcceso.Location = new System.Drawing.Point(680, 98);
+            this.cbAcceso.Location = new System.Drawing.Point(680, 136);
             this.cbAcceso.Margin = new System.Windows.Forms.Padding(4);
             this.cbAcceso.Name = "cbAcceso";
             this.cbAcceso.Size = new System.Drawing.Size(267, 24);
@@ -500,7 +582,7 @@
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.Moccasin;
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContraseña.Location = new System.Drawing.Point(680, 176);
+            this.txtContraseña.Location = new System.Drawing.Point(680, 214);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(267, 22);
@@ -511,7 +593,7 @@
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.Moccasin;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsuario.Location = new System.Drawing.Point(680, 144);
+            this.txtUsuario.Location = new System.Drawing.Point(680, 182);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(267, 22);
@@ -520,7 +602,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(564, 183);
+            this.label10.Location = new System.Drawing.Point(564, 221);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 17);
@@ -530,7 +612,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(584, 153);
+            this.label11.Location = new System.Drawing.Point(584, 191);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 17);
@@ -630,11 +712,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // empleadosMostrarBindingSource
-            // 
-            this.empleadosMostrarBindingSource.DataMember = "Empleados_Mostrar";
-            this.empleadosMostrarBindingSource.DataSource = this.sISTEMA_DE_VENTASDataSet1;
-            // 
             // empleados_MostrarTableAdapter
             // 
             this.empleados_MostrarTableAdapter.ClearBeforeFill = true;
@@ -648,95 +725,6 @@
             // 
             this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 125;
-            // 
-            // empidDataGridViewTextBoxColumn
-            // 
-            this.empidDataGridViewTextBoxColumn.DataPropertyName = "Emp_id";
-            this.empidDataGridViewTextBoxColumn.HeaderText = "Emp_id";
-            this.empidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.empidDataGridViewTextBoxColumn.Name = "empidDataGridViewTextBoxColumn";
-            this.empidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.empidDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nOMBRESDataGridViewTextBoxColumn
-            // 
-            this.nOMBRESDataGridViewTextBoxColumn.DataPropertyName = "NOMBRES";
-            this.nOMBRESDataGridViewTextBoxColumn.HeaderText = "NOMBRES";
-            this.nOMBRESDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nOMBRESDataGridViewTextBoxColumn.Name = "nOMBRESDataGridViewTextBoxColumn";
-            this.nOMBRESDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nOMBRESDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // aPELLIDOSDataGridViewTextBoxColumn
-            // 
-            this.aPELLIDOSDataGridViewTextBoxColumn.DataPropertyName = "APELLIDOS";
-            this.aPELLIDOSDataGridViewTextBoxColumn.HeaderText = "APELLIDOS";
-            this.aPELLIDOSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aPELLIDOSDataGridViewTextBoxColumn.Name = "aPELLIDOSDataGridViewTextBoxColumn";
-            this.aPELLIDOSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aPELLIDOSDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tIPODEDOCUMENTODataGridViewTextBoxColumn
-            // 
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "TIPO_DE_DOCUMENTO";
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.HeaderText = "TIPO_DE_DOCUMENTO";
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Name = "tIPODEDOCUMENTODataGridViewTextBoxColumn";
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
-            this.tIPODEDOCUMENTODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dOCUMENTODataGridViewTextBoxColumn
-            // 
-            this.dOCUMENTODataGridViewTextBoxColumn.DataPropertyName = "DOCUMENTO";
-            this.dOCUMENTODataGridViewTextBoxColumn.HeaderText = "DOCUMENTO";
-            this.dOCUMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dOCUMENTODataGridViewTextBoxColumn.Name = "dOCUMENTODataGridViewTextBoxColumn";
-            this.dOCUMENTODataGridViewTextBoxColumn.ReadOnly = true;
-            this.dOCUMENTODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dIRECCIONDataGridViewTextBoxColumn
-            // 
-            this.dIRECCIONDataGridViewTextBoxColumn.DataPropertyName = "DIRECCION";
-            this.dIRECCIONDataGridViewTextBoxColumn.HeaderText = "DIRECCION";
-            this.dIRECCIONDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dIRECCIONDataGridViewTextBoxColumn.Name = "dIRECCIONDataGridViewTextBoxColumn";
-            this.dIRECCIONDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dIRECCIONDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tELEFONODataGridViewTextBoxColumn
-            // 
-            this.tELEFONODataGridViewTextBoxColumn.DataPropertyName = "TELEFONO";
-            this.tELEFONODataGridViewTextBoxColumn.HeaderText = "TELEFONO";
-            this.tELEFONODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tELEFONODataGridViewTextBoxColumn.Name = "tELEFONODataGridViewTextBoxColumn";
-            this.tELEFONODataGridViewTextBoxColumn.ReadOnly = true;
-            this.tELEFONODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // aCCESODataGridViewTextBoxColumn
-            // 
-            this.aCCESODataGridViewTextBoxColumn.DataPropertyName = "ACCESO";
-            this.aCCESODataGridViewTextBoxColumn.HeaderText = "ACCESO";
-            this.aCCESODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aCCESODataGridViewTextBoxColumn.Name = "aCCESODataGridViewTextBoxColumn";
-            this.aCCESODataGridViewTextBoxColumn.ReadOnly = true;
-            this.aCCESODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // uSUARIODataGridViewTextBoxColumn
-            // 
-            this.uSUARIODataGridViewTextBoxColumn.DataPropertyName = "USUARIO";
-            this.uSUARIODataGridViewTextBoxColumn.HeaderText = "USUARIO";
-            this.uSUARIODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.uSUARIODataGridViewTextBoxColumn.Name = "uSUARIODataGridViewTextBoxColumn";
-            this.uSUARIODataGridViewTextBoxColumn.ReadOnly = true;
-            this.uSUARIODataGridViewTextBoxColumn.Width = 125;
-            // 
             // EMPLEADOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -745,13 +733,15 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EMPLEADOS";
             this.Text = "EMPLEADOS";
             this.Load += new System.EventHandler(this.EMPLEADOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sISTEMA_DE_VENTASDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tpListado.ResumeLayout(false);
             this.tpListado.PerformLayout();
@@ -759,7 +749,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosMostrarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -817,7 +806,6 @@
         private System.Windows.Forms.BindingSource empleadosMostrarBindingSource1;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label Correo;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn empidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMBRESDataGridViewTextBoxColumn;

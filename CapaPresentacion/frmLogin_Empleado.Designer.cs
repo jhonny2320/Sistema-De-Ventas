@@ -32,20 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin_Empleado));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblHora = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.lblHora = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Registrarse = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Registro = new System.Windows.Forms.LinkLabel();
-            this.PanelRestaurarCuenta = new System.Windows.Forms.Panel();
+            this.lblResultadoContraseña = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
@@ -54,37 +52,37 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.RecupCon = new System.Windows.Forms.LinkLabel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.lblResultadoContraseña = new System.Windows.Forms.Label();
+            this.empleados_MostrarTableAdapter1 = new CapaPresentacion.SISTEMA_DE_VENTASDataSet1TableAdapters.Empleados_MostrarTableAdapter();
+            this.lblErrorMensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.PanelRestaurarCuenta.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(51, 82);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(267, 254);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblHora);
+            this.groupBox1.Controls.Add(this.lblErrorMensaje);
             this.groupBox1.Controls.Add(this.txtContraseña);
+            this.groupBox1.Controls.Add(this.lblHora);
             this.groupBox1.Controls.Add(this.txtUsuario);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.btnIngresar);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(341, 82);
@@ -95,6 +93,19 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ACCESO AL SISTEMA";
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.BackColor = System.Drawing.Color.Black;
+            this.txtContraseña.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.ForeColor = System.Drawing.Color.White;
+            this.txtContraseña.Location = new System.Drawing.Point(95, 111);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(290, 40);
+            this.txtContraseña.TabIndex = 15;
+            this.txtContraseña.Text = "CONTRASEÑA";
+            this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
+            this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
             // 
             // lblHora
             // 
@@ -107,50 +118,44 @@
             this.lblHora.Text = "lblHora";
             this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(185, 138);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(201, 22);
-            this.txtContraseña.TabIndex = 13;
-            this.txtContraseña.UseSystemPasswordChar = true;
-            // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(185, 87);
+            this.txtUsuario.BackColor = System.Drawing.Color.Black;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsuario.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtUsuario.Location = new System.Drawing.Point(94, 64);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(201, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(291, 40);
             this.txtUsuario.TabIndex = 12;
+            this.txtUsuario.Text = "USUARIO";
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
+            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
-            // label2
+            // btnIngresar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 146);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "CONTRASEÑA";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 91);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "USUARIO";
+            this.btnIngresar.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Location = new System.Drawing.Point(95, 192);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(291, 44);
+            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.Text = "INGRESAR";
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(95, 209);
+            this.btnSalir.Location = new System.Drawing.Point(685, 13);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 28);
@@ -158,20 +163,6 @@
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.ForeColor = System.Drawing.Color.Black;
-            this.btnIngresar.Location = new System.Drawing.Point(239, 209);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(116, 30);
-            this.btnIngresar.TabIndex = 8;
-            this.btnIngresar.Text = "INGRESAR";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // timer1
             // 
@@ -188,13 +179,15 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DarkRed;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(803, 53);
+            this.pictureBox2.Size = new System.Drawing.Size(794, 53);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
             // 
             // pictureBox3
             // 
@@ -211,40 +204,29 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(195, 11);
+            this.label3.Location = new System.Drawing.Point(291, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(389, 39);
+            this.label3.Size = new System.Drawing.Size(240, 39);
             this.label3.TabIndex = 12;
-            this.label3.Text = "SISTEMA DE VENTAS";
+            this.label3.Text = "BIENVENIDO";
             // 
-            // Registro
+            // lblResultadoContraseña
             // 
-            this.Registro.AutoSize = true;
-            this.Registro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Registro.LinkColor = System.Drawing.Color.White;
-            this.Registro.Location = new System.Drawing.Point(641, 16);
-            this.Registro.Name = "Registro";
-            this.Registro.Size = new System.Drawing.Size(127, 20);
-            this.Registro.TabIndex = 14;
-            this.Registro.TabStop = true;
-            this.Registro.Text = "REGISTRARSE";
-            this.Registro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Registro_LinkClicked);
+            this.lblResultadoContraseña.AutoSize = true;
+            this.lblResultadoContraseña.Location = new System.Drawing.Point(22, 80);
+            this.lblResultadoContraseña.Name = "lblResultadoContraseña";
+            this.lblResultadoContraseña.Size = new System.Drawing.Size(0, 17);
+            this.lblResultadoContraseña.TabIndex = 7;
             // 
-            // PanelRestaurarCuenta
+            // richTextBox1
             // 
-            this.PanelRestaurarCuenta.Controls.Add(this.lblResultadoContraseña);
-            this.PanelRestaurarCuenta.Controls.Add(this.richTextBox1);
-            this.PanelRestaurarCuenta.Controls.Add(this.btnCerrar);
-            this.PanelRestaurarCuenta.Controls.Add(this.label6);
-            this.PanelRestaurarCuenta.Controls.Add(this.btnEnviar);
-            this.PanelRestaurarCuenta.Controls.Add(this.cbCorreos);
-            this.PanelRestaurarCuenta.Controls.Add(this.label5);
-            this.PanelRestaurarCuenta.Controls.Add(this.label4);
-            this.PanelRestaurarCuenta.Location = new System.Drawing.Point(212, 71);
-            this.PanelRestaurarCuenta.Name = "PanelRestaurarCuenta";
-            this.PanelRestaurarCuenta.Size = new System.Drawing.Size(622, 494);
-            this.PanelRestaurarCuenta.TabIndex = 15;
+            this.richTextBox1.Location = new System.Drawing.Point(140, 273);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(439, 148);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.Visible = false;
             // 
             // btnCerrar
             // 
@@ -287,7 +269,7 @@
             this.cbCorreos.FormattingEnabled = true;
             this.cbCorreos.Location = new System.Drawing.Point(224, 126);
             this.cbCorreos.Name = "cbCorreos";
-            this.cbCorreos.Size = new System.Drawing.Size(288, 24);
+            this.cbCorreos.Size = new System.Drawing.Size(288, 25);
             this.cbCorreos.TabIndex = 2;
             this.cbCorreos.SelectedIndexChanged += new System.EventHandler(this.cbCorreos_SelectedIndexChanged);
             // 
@@ -315,9 +297,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkRed;
+            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel2.Controls.Add(this.RecupCon);
-            this.panel2.Controls.Add(this.Registro);
             this.panel2.Location = new System.Drawing.Point(0, 361);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(794, 53);
@@ -326,42 +307,42 @@
             // RecupCon
             // 
             this.RecupCon.AutoSize = true;
-            this.RecupCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecupCon.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecupCon.LinkArea = new System.Windows.Forms.LinkArea(0, 25);
             this.RecupCon.LinkColor = System.Drawing.Color.White;
-            this.RecupCon.Location = new System.Drawing.Point(336, 11);
+            this.RecupCon.Location = new System.Drawing.Point(422, 0);
             this.RecupCon.Name = "RecupCon";
-            this.RecupCon.Size = new System.Drawing.Size(235, 25);
+            this.RecupCon.Size = new System.Drawing.Size(305, 35);
             this.RecupCon.TabIndex = 15;
             this.RecupCon.TabStop = true;
             this.RecupCon.Text = "¿olvidaste tu contraseña?";
             this.RecupCon.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RecupCon_LinkClicked);
             // 
-            // richTextBox1
+            // empleados_MostrarTableAdapter1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(140, 273);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(439, 148);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            this.richTextBox1.Visible = false;
+            this.empleados_MostrarTableAdapter1.ClearBeforeFill = true;
             // 
-            // lblResultadoContraseña
+            // lblErrorMensaje
             // 
-            this.lblResultadoContraseña.AutoSize = true;
-            this.lblResultadoContraseña.Location = new System.Drawing.Point(22, 80);
-            this.lblResultadoContraseña.Name = "lblResultadoContraseña";
-            this.lblResultadoContraseña.Size = new System.Drawing.Size(0, 17);
-            this.lblResultadoContraseña.TabIndex = 7;
+            this.lblErrorMensaje.AutoSize = true;
+            this.lblErrorMensaje.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorMensaje.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMensaje.Location = new System.Drawing.Point(94, 158);
+            this.lblErrorMensaje.Name = "lblErrorMensaje";
+            this.lblErrorMensaje.Size = new System.Drawing.Size(96, 17);
+            this.lblErrorMensaje.TabIndex = 16;
+            this.lblErrorMensaje.Text = "Mensaje error";
+            this.lblErrorMensaje.Visible = false;
             // 
             // frmLogin_Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(796, 414);
-            this.Controls.Add(this.PanelRestaurarCuenta);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -371,6 +352,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin_Empleado";
+            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin_Empleado";
             this.Load += new System.EventHandler(this.frmLogin_Empleado_Load);
@@ -379,8 +361,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.PanelRestaurarCuenta.ResumeLayout(false);
-            this.PanelRestaurarCuenta.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -392,10 +372,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Timer timer1;
@@ -403,8 +380,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel Registro;
-        private System.Windows.Forms.Panel PanelRestaurarCuenta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.LinkLabel RecupCon;
@@ -415,5 +390,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label lblResultadoContraseña;
+        private SISTEMA_DE_VENTASDataSet1TableAdapters.Empleados_MostrarTableAdapter empleados_MostrarTableAdapter1;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.Label lblErrorMensaje;
     }
 }
